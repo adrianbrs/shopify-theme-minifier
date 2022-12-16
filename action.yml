@@ -1,0 +1,7 @@
+name: 'Shopify Theme Minifier'
+description: 'Minify the files of a Shopify theme'
+# inputs:
+  
+runs:
+  using: node16
+  main: dist/index.js
