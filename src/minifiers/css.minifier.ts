@@ -4,9 +4,9 @@ import * as path from 'path'
 import * as sourceMapHelper from '../source-map-helper'
 import {SourceMapConsumer, SourceMapGenerator} from 'source-map'
 import {IActionSettings} from '../interfaces/settings.interface'
-import {MinifierOutput, MinifierRunner} from '../minifier'
+import {MinifierOutput, Minifier} from '../minifier'
 
-export default class MinifierCSS extends MinifierRunner {
+export default class MinifierCSS extends Minifier {
   constructor(fileMap: Record<string, string[]>, settings: IActionSettings) {
     super(['css'], fileMap, settings)
   }

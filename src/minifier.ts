@@ -8,7 +8,7 @@ export type MinifierOutput = {
 
 export type MinifierResult = MinifierOutput[]
 
-export interface MinifierRunner {
+export interface Minifier {
   on(event: 'data', cb: (entry: MinifierOutput) => void): this
   on(event: 'done', cb: (output: MinifierResult) => void): this
 }
@@ -20,7 +20,7 @@ interface PullItem {
   reject: (err: any) => void
 }
 
-export abstract class MinifierRunner
+export abstract class Minifier
   extends EventEmitter
   implements
     AsyncIterable<MinifierOutput>,

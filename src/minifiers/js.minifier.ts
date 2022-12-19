@@ -5,10 +5,10 @@ import * as fs from 'fs'
 import * as fsHelper from '../fs-helper'
 import * as sourceMapHelper from '../source-map-helper'
 import {IActionSettings} from '../interfaces/settings.interface'
-import {MinifierOutput, MinifierRunner} from '../minifier'
+import {MinifierOutput, Minifier} from '../minifier'
 import {SourceMapConsumer, SourceMapGenerator} from 'source-map'
 
-export default class MinifierJS extends MinifierRunner {
+export default class MinifierJS extends Minifier {
   private _sharedOptions: UglifyJS.MinifyOptions = {
     nameCache: {}
   }
