@@ -3,6 +3,7 @@ description: "Minify the files of a Shopify theme"
 inputs:
   themePath:
     description: "Relative path under $GITHUB_WORKSPACE where the theme root files are placed"
+    default: "."
 
   ignore:
     description: "Files to be ignored (in glob format)"
@@ -15,9 +16,11 @@ inputs:
 
   dryRun:
     description: "Print minified files to the console instead of writing to the output files"
+    default: "false"
 
   sourceMap:
     description: "Control source map generation"
+    default: "none"
 
 runs:
   using: node16
