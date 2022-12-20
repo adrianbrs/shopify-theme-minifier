@@ -6,7 +6,7 @@ import {SourceMapConsumer, SourceMapGenerator} from 'source-map'
 import {IActionSettings} from '../interfaces/settings.interface'
 import {MinifierOutput, Minifier} from '../minifier'
 
-export default class MinifierCSS extends Minifier {
+export default class CSSMinifier extends Minifier {
   constructor(fileMap: Record<string, string[]>, settings: IActionSettings) {
     super(['css'], fileMap, settings)
   }

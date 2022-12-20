@@ -5,11 +5,10 @@ import * as sourceMapHelper from '../source-map-helper'
 import {IActionSettings} from '../interfaces/settings.interface'
 import {MinifierOutput, Minifier} from '../minifier'
 
-export default class MinifierJS extends Minifier {
-  /**
-   * Terser options to share with HTML minifier to allow mangling top level names
-   */
+export default class JSMinifier extends Minifier {
   static TERSER_OPTIONS: terser.MinifyOptions = {
+    mangle: false,
+    toplevel: false,
     nameCache: {}
   }
 
@@ -46,7 +45,7 @@ export default class MinifierJS extends Minifier {
     }
 
     const result = await terser.minify(source, {
-      ...MinifierJS.TERSER_OPTIONS,
+      ...JSMinifier.TERSER_OPTIONS,
       sourceMap: sourceMapOptions
     })
 

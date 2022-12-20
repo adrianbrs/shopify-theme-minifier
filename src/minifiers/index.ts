@@ -7,5 +7,5 @@ export function load(
   fileMap: Record<string, string[]>,
   settings: IActionSettings
 ): Minifier[] {
-  return [CSS, JS].map(Minifier => new Minifier(fileMap, settings))
+  return [CSS, JS].map(MinifierClass => new MinifierClass(fileMap, settings))
 }

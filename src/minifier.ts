@@ -46,7 +46,7 @@ export abstract class Minifier
     protected settings: IActionSettings
   ) {
     super()
-    this._files = this.ext.flatMap(e => [...fileMap[e]])
+    this._files = this.ext.flatMap(e => [...(fileMap[e] || [])])
   }
 
   protected abstract minify(
